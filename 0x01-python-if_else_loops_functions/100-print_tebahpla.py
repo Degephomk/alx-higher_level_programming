@@ -1,8 +1,3 @@
 #!/usr/bin/python3
-for index in range(0, 26):
-    word = ord('z') - index
-    if (index % 2 == 1):
-        word = chr(word - ord('a') + ord('A'))
-    else:
-        word = chr(word)
-    print("{}".format(word), end='')
+for c in range(ord('z'), ord('a') - 1, -1):
+    print("{:c}".format((c - (ord('a') - ord('A'))) if c % 2 else c), end='')
