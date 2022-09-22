@@ -1,7 +1,13 @@
-#!/usr/bin/python3
-def magic_calculation(a, b, c):
+#!/usr/bin/env python3
+from magic_calculation_102 import add, sub
+
+
+def magic_calculation(a, b):
     if (a < b):
-        return (c)
-    elif (c > b):
-        return (a + b)
-    return ((a * b) - c)
+        c = add(a, b)
+        for i in range(4, 6):
+            c = add(c, i)
+        return c
+
+    else:
+        return sub(a, b)
