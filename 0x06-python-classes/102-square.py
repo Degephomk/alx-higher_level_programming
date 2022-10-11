@@ -1,83 +1,59 @@
 #!/usr/bin/python3
-"""
-No module imported
-"""
+""" class Square that defines a square"""
 
 
 class Square:
-    """
-    Private instance attribute size
-    public instance method
-    """
+    """ class Square that defines a square"""
     def __init__(self, size=0):
-        """private instance attribute
-        parameters
-        -------------------------
-        size : integer else TypeError
-        if size less than 0, raise value error
+        """ init square
+
+        Args:
+            value (int): size of the square.
         """
-        self.__size = size
+        self.size = size
 
     @property
     def size(self):
-        """
-        to retrieve private instance attribute
+        """int: private size.
+
+        Returns:
+            Private size.
         """
         return self.__size
 
     @size.setter
     def size(self, value):
+        """Sets value into size, must be int.
+
+        Args:
+            value (int): size of the square.
         """
-        to set private instance attribute
-        """
-        self.__size = value
-        try:
-            assert type(value) == int
-        except:
-            raise TypeError("size must be an integer")
-        if value < 0:
-            raise ValueError("size must be >= 0")
+        if type(value) is not int and type(value) is not float:
+            raise TypeError('size must be a number')
+        elif value < 0:
+            raise ValueError('size must be >= 0')
+        else:
+            self.__size = value  #: size of the square
 
     def area(self):
+        """returns the area
+
+        Returns:
+            area.
         """
-        public instance method
-        returns the current square area
-        """
-        area = self.__size ** 2
-        return area
+        return self.__size**2
 
     def __lt__(self, other):
-        """check for less than"""
-        if self.__size ** 2 < other.__size ** 2:
-            return True
-        return False
+        return self.size < other.size
 
     def __le__(self, other):
-        """check for <="""
-        if self.__size ** 2 <= other.__size ** 2:
-            return True
-        return False
+        return self.size <= other.size
 
     def __eq__(self, other):
-        """check for =="""
-        if self.__size ** 2 == other.__size ** 2:
-            return True
-        return False
+        return self.size == other.size
 
     def __ne__(self, other):
-        """check for !="""
-        if self.__size ** 2 != other.__size ** 2:
-            return True
-        return False
-
-    def __gt__(self, other):
-        """check for >"""
-        if self.__size ** 2 > other.__size ** 2:
-            return True
-        return False
+        return self.size != other.size
 
     def __ge__(self, other):
-        """check for >="""
-        if self.__size ** 2 >= other.__size ** 2:
-            return True
-        return False
+        return self.size >= other.size
