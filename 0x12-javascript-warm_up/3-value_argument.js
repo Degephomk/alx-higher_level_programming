@@ -1,9 +1,9 @@
 #!/usr/bin/node
 const Argv = process.argv.length;
 if (Argv < 3) {
-	  console.log('No argument');
+  console.log('No argument');
 } else if (Argv === 3) {
-	  console.log(Argv);
+  console.log(Argv);
 } else {
-	  console.log(Argv);
+  console.log(Argv);
 }
