@@ -6,7 +6,7 @@ if (isNaN(x)) {
 } else {
   for (i = 0; i < x; i++) {
     for (j = 0; j < x; j++) {
-      process.stdout.write('x');
+      process.stdout.write('X');
     }
     console.log();
   }
